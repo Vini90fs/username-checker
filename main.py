@@ -1,13 +1,6 @@
-from sites import SITES
-
-print("================================")
-print("        USERNAME CHECKER")
-print("================================")
+from checker import check_username
 
 username = input("Digite o username: ")
 
-print()
-print("Username pesquisado:", username)
-
-for site in SITES:
-    print(site)
+print("Username:", username)
+check_username(username)
