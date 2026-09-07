@@ -2,6 +2,7 @@ import requests
 from sites import SITES
 
 def check_username(username):
+    resultados = []
     for site in SITES:
         nome = list(site.keys())[0]
         url = list(site.values())[0]
@@ -11,15 +12,15 @@ def check_username(username):
         resposta = requests.get(url)
 
         if resposta.status_code == 200:
-            print(nome, "> Encontrado")
-
+            resultados.append(nome + " > Encontrado")
+            
         elif resposta.status_code == 403:
-            print(nome, "> Nao foi possivel verificar")
+            resultados.append(nome + " > Nao foi possivel verificar")
 
         elif resposta.status_code == 404:
-            print(nome, "> Nao encontrado")
+            resultados.append(nome + " > Nao encontrado")
 
-
+    return resultados
 
 
 
