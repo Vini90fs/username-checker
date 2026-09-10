@@ -7,4 +7,8 @@ print("Username:", username)
 resultados = check_username(username)
 
 for resultado in resultados:
-    print(resultado)
+    if(resultado["status"] == "Encontrado"):
+        print(resultado["site"], ">", resultado["status"], ">", resultado["url"])
+
+    else:
+        print(resultado["site"], ">", resultado["status"])

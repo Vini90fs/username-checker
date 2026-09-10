@@ -12,13 +12,31 @@ def check_username(username):
         resposta = requests.get(url)
 
         if resposta.status_code == 200:
-            resultados.append(nome + " > Encontrado")
+            resultado = {
+                "site": nome,
+                "status": "Encontrado",
+                "url": url
+            }
+
+            resultados.append(resultado)
             
         elif resposta.status_code == 403:
-            resultados.append(nome + " > Nao foi possivel verificar")
+            resultado = {
+                "site": nome,
+                "status": "Nao foi possivel verificar",
+                "url": url
+            }
+
+            resultados.append(resultado)
 
         elif resposta.status_code == 404:
-            resultados.append(nome + " > Nao encontrado")
+            resultado = {
+                "site": nome,
+                "status": "Nao encontrado",
+                "url": url
+            }
+            
+            resultados.append(resultado)
 
     return resultados
 
