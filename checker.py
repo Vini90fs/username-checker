@@ -9,7 +9,17 @@ def check_username(username):
 
         url = url.replace("{username}", username)
 
-        resposta = requests.get(url)
+        try:
+            resposta = requests.get(url, timeout=5)
+        except requests.exceptions.RequestException:
+            resultado = {
+                "site": nome,
+                "status": "Erro de conexao",
+                "url": url
+            }
+
+            resultados.append(resultado)
+            continue
 
         if resposta.status_code == 200:
             resultado = {
