@@ -4,8 +4,8 @@ from sites import SITES
 def check_username(username):
     resultados = []
     for site in SITES:
-        nome = list(site.keys())[0]
-        url = list(site.values())[0]
+        nome = site["nome"]
+        url = site["url"]
 
         url = url.replace("{username}", username)
 

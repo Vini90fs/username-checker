@@ -1,5 +1,14 @@
 SITES = [
-    {"Github": "https://github.com/{username}"},
-    {"GitLab": "https://gitlab.com/{username}"},
-    {"Dev.to": "https://dev.to/{username}"}
+    {
+        "nome": "GitHub",
+        "url": "https://github.com/{username}"
+    },
+    {
+        "nome": "GitLab",
+        "url": "https://gitlab.com/{username}"
+    },
+    {
+        "nome": "Dev.to",
+        "url": "https://dev.to/{username}"
+    }
 ]
