@@ -48,6 +48,15 @@ def check_username(username):
             
             resultados.append(resultado)
 
+        else:
+            resultado = {
+                "site": nome,
+                "status": f"Erro HTTP {resposta.status_code}",
+                "url": url
+            }
+
+            resultados.append(resultado)
+
     return resultados
 
 
